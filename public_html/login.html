@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+-->
+<html>
+    <head>
+        <title>Welcome to Fruit Smash</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <link type='text/css' href='styles.css' rel='stylesheet'/>
+    </head>
+    <body style="max-height: 900px;
+          overflow-y: hidden;">
+        <div class="center"><h1 class="mid">Welcome</h1></div>
+        <br><br>
+        <div class="center"><h3 class="mid">Please Enter a Name</h3></div>
+        <div class="center">
+            <h1 class="mid">
+                <input id="name" type="text">
+            </h1>
+        </div>
+        <div class="center"><h1 class="mid"><button id="goto">Submit</button></h1></div>
+        <script>
+            $(document).ready(function()
+            {
+                $("#goto").click(function()
+                {
+                    (function(global) {
+                        global.localStorage.setItem("username", $("#name").val());
+                    }(window));
+                    window.location.href = "index.html";
+                });
+            });
+        </script>
+    </body>
+</html>
